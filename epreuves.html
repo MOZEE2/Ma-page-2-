@@ -5,9 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Épreuves - Épreuves Interactives</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #f4f4f4; /* Fond gris clair */
+            color: #333; /* Texte noir */
+            font-family: Arial, sans-serif; /* Police propre et simple */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 2em 0;
+            background-color: #333; /* Fond noir */
+            color: #fff; /* Texte blanc */
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444; /* Fond gris foncé */
+            padding: 1em 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1em;
+            font-weight: bold;
+            font-size: 1.2em; /* Augmenter la taille du texte */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2em auto;
+            padding: 0 1em;
+        }
+
+        .container h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 1em;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1em;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            font-size: 1.5em;
+            margin: 0 0 0.5em 0;
+            color: #333;
+        }
+
+        .card p {
+            margin: 0 0 1em 0;
+            color: #666;
+        }
+
+        .card a button {
+            background-color: #333; /* Fond noir */
+            color: #fff; /* Texte blanc */
+            border: none;
+            padding: 0.5em 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+        }
+
+        .card a button:hover {
+            background-color: #555; /* Fond gris foncé */
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #444; /* Fond gris foncé */
+            color: #fff; /* Texte blanc */
+            margin-top: 2em;
+        }
+    </style>
 </head>
 <body>
-
     <!-- En-tête -->
     <header>
         <img src="images/logo.png" alt="Logo du site">
@@ -87,6 +181,5 @@
         // Appeler la fonction pour générer les épreuves dès le chargement de la page
         window.onload = generateEpreuves;
     </script>
-
 </body>
 </html>
