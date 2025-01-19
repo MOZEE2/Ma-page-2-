@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Épreuves - Épreuves Interactives</title>
+    <title>Documents - Documents Interactifs</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -104,34 +104,34 @@
 <body>
     <!-- En-tête -->
     <header>
-        <img src="logo.png" alt="Logo du site">
-        <h1>Épreuves à Télécharger</h1>
+        <img src="images/logo.png" alt="Logo du site">
+        <h1>Documents à Télécharger</h1>
     </header>
 
     <!-- Menu de navigation -->
     <nav>
         <a href="index.html">Accueil</a>
-        <a href="epreuves.html">Épreuves</a>
+        <a href="documents.html">Documents</a>
         <a href="contact.html">Contact</a>
     </nav>
 
-    <!-- Section des Épreuves -->
-    <section id="epreuves" class="container">
-        <h2>Épreuves disponibles</h2>
+    <!-- Section des Documents -->
+    <section id="documents" class="container">
+        <h2>Documents disponibles</h2>
         <div id="cards-container" class="content">
-            <!-- Les cartes des épreuves seront générées ici par JavaScript -->
+            <!-- Les cartes des documents seront générées ici par JavaScript -->
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2025 Épreuves Interactives - Tous droits réservés</p>
+        <p>© 2025 Documents Interactifs - Tous droits réservés</p>
     </footer>
 
     <!-- Script JavaScript -->
     <script>
-        // Tableau d'épreuves (dynamique)
-        const epreuves = [
+        // Tableau de documents (dynamique)
+        const documents = [
             { titre: "BIOPHYSIQUE _072229", description: "Biophysique", fichier: "BIOPHYSIQUE _072229.pdf" },
             { titre: "Dosimetrie", description: "dosimetrie, c'est un peu compliqué", fichier: "DOSIMETRIE PR ADAMBOUNOU.pdf" },
             { titre: "Électrostatique", description: "physique ", fichier: "My_509e912002677-1.pdf" },
@@ -139,31 +139,31 @@
             { titre: "biocell", description: "biologie cellulaire ", fichier: "QCM4 Méthode d'étude de la Cellule.pdf" },
             { titre: "biocell", description: "Biologie ", fichier: "QCM5 La Membrane Plasmique.pdf" },
             { titre: "biocell", description: "biologie cellulaire ", fichier: "QCM5 La Membrane Plasmique.pdf" },
-            // Ajouter d'autres épreuves ici jusqu'à 50 ou plus
+            // Ajouter d'autres documents ici jusqu'à 50 ou plus
             { titre: "Biophysique", description: "biophy", fichier: "1biophy 3(1).pdf" }
         ];
 
-        // Fonction pour générer les cartes d'épreuves
-        function generateEpreuves() {
+        // Fonction pour générer les cartes de documents
+        function generateDocuments() {
             const container = document.getElementById("cards-container");
 
-            epreuves.forEach(epreuve => {
-                // Créer une carte pour chaque épreuve
+            documents.forEach(document => {
+                // Créer une carte pour chaque document
                 const card = document.createElement("div");
                 card.classList.add("card");
 
                 // Créer le titre
                 const titre = document.createElement("h3");
-                titre.textContent = epreuve.titre;
+                titre.textContent = document.titre;
 
                 // Créer la description
                 const description = document.createElement("p");
-                description.textContent = epreuve.description;
+                description.textContent = document.description;
 
                 // Créer le bouton de téléchargement
                 const button = document.createElement("a");
-                button.href = epreuve.fichier;
-                button.download = epreuve.fichier;
+                button.href = document.fichier;
+                button.download = document.fichier;
                 const buttonText = document.createElement("button");
                 buttonText.textContent = "Télécharger";
                 button.appendChild(buttonText);
@@ -178,8 +178,8 @@
             });
         }
 
-        // Appeler la fonction pour générer les épreuves dès le chargement de la page
-        window.onload = generateEpreuves;
+        // Appeler la fonction pour générer les documents dès le chargement de la page
+        window.onload = generateDocuments;
     </script>
 </body>
 </html>
