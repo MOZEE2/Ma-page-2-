@@ -7,31 +7,29 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: #000; /* Fond noir */
-            color: #0f0; /* Texte vert */
-            font-family: 'Courier New', Courier, monospace; /* Police de style terminal */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100vh;
+            background-color: #f4f4f4; /* Fond gris clair */
+            color: #333; /* Texte noir */
+            font-family: Arial, sans-serif; /* Police propre et simple */
             margin: 0;
-            overflow: hidden;
+            padding: 0;
         }
 
         header {
             text-align: center;
-            animation: fadeIn 2s ease-out;
+            padding: 2em 0;
+            background-color: #333; /* Fond noir */
+            color: #fff; /* Texte blanc */
         }
 
         nav {
             display: flex;
             justify-content: center;
-            background-color: #111;
+            background-color: #444; /* Fond gris foncé */
             padding: 1em 0;
         }
 
         nav a {
-            color: #0f0;
+            color: #fff;
             text-decoration: none;
             margin: 0 1em;
             font-weight: bold;
@@ -39,50 +37,37 @@
         }
 
         .container {
+            max-width: 1200px;
+            margin: 2em auto;
+            padding: 0 1em;
+        }
+
+        .container h2 {
             text-align: center;
-            animation: fadeIn 2s ease-out;
-            padding: 2em; /* Ajouter un padding pour une meilleure lisibilité */
+            color: #333;
+            margin-bottom: 1em;
         }
 
-        .blink {
-            animation: blink 1s step-end infinite;
-        }
-
-        @keyframes blink {
-            from, to {
-                color: transparent;
-            }
-            50% {
-                color: #0f0; /* Le curseur clignotant */
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .glow {
-            text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0, 0 0 30px #0f0;
-            font-size: 1.5em; /* Augmenter la taille du texte */
+        .content p {
+            color: #666;
+            font-size: 1.1em; /* Augmenter la taille du texte */
+            line-height: 1.6; /* Améliorer la lisibilité */
         }
 
         footer {
             text-align: center;
             padding: 1em 0;
-            background-color: #111;
+            background-color: #444; /* Fond gris foncé */
+            color: #fff; /* Texte blanc */
+            margin-top: 2em;
         }
     </style>
 </head>
 <body>
     <!-- En-tête -->
     <header>
-        <img src="logo.png" alt="logo du site" class="glow">
-        <h1 class="glow">Bienvenue A VOUS Étudiant(e)s en P1</h1>
+        <img src="logo.png" alt="Logo du site">
+        <h1>Bienvenue A VOUS Étudiant(e)s en P1</h1>
     </header>
 
     <!-- Menu de navigation -->
@@ -94,40 +79,16 @@
 
     <!-- Section Accueil -->
     <section id="home" class="container">
-        <h2 class="glow">Introduction</h2>
-        <p class="glow">Considérez ceci comme notre site dédié aux épreuves que j'ai créé. Vous pouvez télécharger des épreuves pour préparer l'examen et même prévoir le second examen.</p>
-        <p class="blink glow">SITE EN CONSTRUCTION</p>
+        <h2>Introduction</h2>
+        <div class="content">
+            <p>Considérez ceci comme notre site dédié aux épreuves que j'ai créé. Vous pouvez télécharger des épreuves pour préparer l'examen et même prévoir le second examen.</p>
+            <p>SITE EN CONSTRUCTION</p>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <p>© 2025 Z MOZÉÉ - Tous droits réservés</p>
     </footer>
-
-    <audio id="hacker-sound" src="hacker-sound.mp3" preload="auto"></audio>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const hackerSound = document.getElementById('hacker-sound');
-            hackerSound.play();
-            
-            const container = document.querySelector('.container');
-            const text = container.innerHTML;
-            container.innerHTML = '';
-
-            let i = 0;
-            const speed = 50; // Vitesse d'animation du texte
-
-            function typeWriter() {
-                if (i < text.length) {
-                    container.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, speed);
-                }
-            }
-
-            typeWriter();
-        });
-    </script>
 </body>
 </html>
