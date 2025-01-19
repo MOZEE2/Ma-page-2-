@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Épreuves - Épreuves Interactives</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- En-tête -->
+    <header>
+        <img src="images/logo.png" alt="Logo du site">
+        <h1>Épreuves à Télécharger</h1>
+    </header>
+
+    <!-- Menu de navigation -->
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="epreuves.html">Épreuves</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Section des Épreuves -->
+    <section id="epreuves" class="container">
+        <h2>Épreuves disponibles</h2>
+        <div id="cards-container" class="content">
+            <!-- Les cartes des épreuves seront générées ici par JavaScript -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Épreuves Interactives - Tous droits réservés</p>
+    </footer>
+
+    <!-- Script JavaScript -->
+    <script>
+        // Tableau d'épreuves (dynamique)
+        const epreuves = [
+            { titre: "BIOPHYSIQUE _072229", description: "Biophysique", fichier: "BIOPHYSIQUE _072229.pdf" },
+            { titre: "Dosimetrie", description: "dosimetrie, c'est un peu compliqué", fichier: "DOSIMETRIE PR ADAMBOUNOU.pdf" },
+            { titre: "Électrostatique", description: "physique ", fichier: "My_509e912002677-1.pdf" },
+            { titre: "biocell", description: "biologie cellulaire ", fichier: "QCM1 Cellule eucaryote.pdf" },
+            { titre: "biocell", description: "biologie cellulaire ", fichier: "QCM4 Méthode d'étude de la Cellule.pdf" },
+            { titre: "biocell", description: "Biologie ", fichier: "QCM5 La Membrane Plasmique.pdf" },
+            { titre: "biocell", description: "biologie cellulaire ", fichier: "QCM5 La Membrane Plasmique.pdf" },
+            // Ajouter d'autres épreuves ici jusqu'à 50 ou plus
+            { titre: "Biophysique", description: "biophy", fichier: "1biophy 3(1).pdf" }
+        ];
+
+        // Fonction pour générer les cartes d'épreuves
+        function generateEpreuves() {
+            const container = document.getElementById("cards-container");
+
+            epreuves.forEach(epreuve => {
+                // Créer une carte pour chaque épreuve
+                const card = document.createElement("div");
+                card.classList.add("card");
+
+                // Créer le titre
+                const titre = document.createElement("h3");
+                titre.textContent = epreuve.titre;
+
+                // Créer la description
+                const description = document.createElement("p");
+                description.textContent = epreuve.description;
+
+                // Créer le bouton de téléchargement
+                const button = document.createElement("a");
+                button.href = epreuve.fichier;
+                button.download = epreuve.fichier;
+                const buttonText = document.createElement("button");
+                buttonText.textContent = "Télécharger";
+                button.appendChild(buttonText);
+
+                // Ajouter le titre, la description et le bouton dans la carte
+                card.appendChild(titre);
+                card.appendChild(description);
+                card.appendChild(button);
+
+                // Ajouter la carte dans le conteneur
+                container.appendChild(card);
+            });
+        }
+
+        // Appeler la fonction pour générer les épreuves dès le chargement de la page
+        window.onload = generateEpreuves;
+    </script>
+
+</body>
+</html>
